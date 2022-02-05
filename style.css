@@ -1,0 +1,53 @@
+body {
+  background-color: darkblue;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+}
+
+section {
+  border: solid 2px black;
+  border-radius: 1rem;
+  margin: 5% 10%;
+  padding: 1rem;
+  background-color: lightsalmon;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+h1, h2 {
+  text-align: center;
+  color: darkblue
+}
+
+.game-container {
+  display: inline-block;
+  margin: auto;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border: solid 2px darkblue;
+  border-radius: 1rem;
+  width: auto;
+  
+}
+
+.gameboard-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.gamesquare{
+  border: solid 2px darkblue;
+  padding: 1rem;
+  font-size: 10rem;
+  height: 10rem;
+  width: 10rem;
+  text-align: center;
+  color: darkblue
+}
