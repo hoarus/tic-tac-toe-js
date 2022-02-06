@@ -2,6 +2,14 @@ body {
   background-color: darkblue;
   box-sizing: border-box;
   font-size: 0.8rem;
+
+  /* Disable text selection */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; 
 }
 
 section {
@@ -52,3 +60,4 @@ h1, h2 {
   text-align: center;
   color: darkblue
 }
+
