@@ -61,3 +61,38 @@ h1, h2 {
   color: darkblue
 }
 
+.active-square:hover {
+  background-color: darkblue;
+}
+
+.active-square:active {
+  transform: scale(1.1);
+}
+
+.instructions-won {
+  color: darkred;
+}
+
+.play-again {
+  width: 30%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: darkblue;
+  background-color: lightsalmon;
+  border: solid 2px darkblue;
+  border-radius: 1rem;
+  align-self: center;
+  margin: 2rem;
+}
+
+.play-again:hover {
+  color: darkred;
+}
+.play-again:active {
+  transform: scale(1.1, 1.1);
+}
+
+.hidden {
+  display: none;
+}
