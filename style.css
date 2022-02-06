@@ -20,6 +20,7 @@ section {
   background-color: lightsalmon;
   display: flex;
   flex-direction: column;
+  align-items: center;
   
 }
 
@@ -73,7 +74,7 @@ h1, h2 {
   color: darkred;
 }
 
-.play-again {
+.play-again, .play-game {
   width: 30%;
   padding: 1rem;
   font-size: 1.5rem;
@@ -86,11 +87,23 @@ h1, h2 {
   margin: 2rem;
 }
 
-.play-again:hover {
+.play-again:hover, .play-game:hover {
   color: darkred;
 }
-.play-again:active {
+.play-again:active, .play-game:active {
   transform: scale(1.1, 1.1);
+}
+
+
+
+.player-names-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-name {
+  justify-self: center;
 }
 
 .hidden {
