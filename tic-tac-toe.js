@@ -31,6 +31,16 @@ const gameBoard = (function() {
     return gameSquares[square] === " ";
   };
 
+  const isBoardFull = () => {
+    fullBoard = true;
+    gameSquares.forEach(square => {
+      if (square === " ") {
+        fullBoard = false;
+      }
+    });
+    return fullBoard;
+  };
+
   const hasWonGame = (token) => {
 
     if (victoryCondition(token, 0, 1, 2) == true) {
@@ -71,6 +81,7 @@ const gameBoard = (function() {
     isSquareEmpty,
     hasWonGame,
     resetGameBoard,
+    isBoardFull,
   };
 
 })(); 
@@ -113,13 +124,25 @@ const displayController = (() => {
 
   function hasPlayerWon() {
     if (gameBoard.hasWonGame(currentPlayer.token)) {
-      isGameOver = true;
       let message = `${currentPlayer.name} has won the game. Congratulations!`;
       instructions.textContent = message;
-      instructions.classList.add("instructions-won");
-      siteSquares.forEach(square => square.classList.remove("active-square"));
-      playAgainButton.classList.remove("hidden");
+      gameOver();
     }
+  };
+
+  function isGameADraw() {
+    if (gameBoard.isBoardFull()) {
+      let message = `Oh no - it's a draw!`;
+      instructions.textContent = message;
+      gameOver();
+    };
+  };
+
+  function gameOver() {
+    isGameOver = true;
+    instructions.classList.add("instructions-won");
+    siteSquares.forEach(square => square.classList.remove("active-square"));
+    playAgainButton.classList.remove("hidden");
   };
 
   function playRound(squareNumber){
@@ -127,7 +150,10 @@ const displayController = (() => {
       gameBoard.placeToken(squareNumber, currentPlayer.token);
       gameBoard.printGameSquares();
       hasPlayerWon();
-      alternatePlayer();  
+      isGameADraw();
+      if (isGameOver === false) {
+        alternatePlayer(); 
+      }; 
     }
     
   };
